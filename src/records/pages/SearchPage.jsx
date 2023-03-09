@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm"
-import queryString from 'query-string';
+import { queryString } from 'query-string';
 import { RecordCard } from "../components"
 import { getRecordsByName } from "../helpers";
 
@@ -37,7 +37,7 @@ export const SearchPage = () => {
         <div className="col-5">
           <h4>Busque por el titulo del album que desea conocer ó palabras que lo contengan</h4>
           <hr/>
-          <form onSubmit={ onSearchSubmit }>
+          <form onSubmit={ onSearchSubmit } aria-label="form">
             <input
               type="text"
               placeholder="Search a Record"
@@ -72,7 +72,7 @@ export const SearchPage = () => {
             Search a Record
           </div>
 
-          <div className="alert alert-danger animate__animated animate__fadeInRight" 
+          <div aria-label="alert-danger" className="alert alert-danger animate__animated animate__fadeInRight" 
               style={{ display: showError ? '' : 'none' }}>
             There's no results for <b>{ q }</b>
           </div>
